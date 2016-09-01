@@ -23,6 +23,7 @@ public class Framework_001 {
         //http://toolsqa.wpengine.com/selenium-webdriver/test-case-with-log4j/
         // http://toolsqa.wpengine.com/selenium-webdriver/log4j-logging/
         DOMConfigurator.configure("log4j.xml");
+        //Getting the Test Case name, as it will going to use in so many places
 
 
     }
