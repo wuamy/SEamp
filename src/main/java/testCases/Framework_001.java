@@ -39,9 +39,14 @@ public class Framework_001 {
         //Fetching the Test Case row number from teh test data sheet
         //This row number will be feed to so many functions, to get the relevant data from the Test Data sheet
         iTestCaseRow = ExcelUtils.getRowContains(sTestCaseName, Constant.Col_TestCaseName);
-
-
-
+        //Launching the browser, this will take the browser type from test data sheet
+        driver = Util.OpenBrowser(iTestCaseRow);
+        //Initializing the base class for selenium driver
+        //now we do need to provide the selenium driver to any of the Page classes or module actions
+        //will soon write a post on base class
+        new BaseClass(driver);
 
     }
+
+
 }
