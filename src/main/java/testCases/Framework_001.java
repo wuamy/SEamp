@@ -1,6 +1,7 @@
 package testCases;
 
 import org.apache.log4j.xml.DOMConfigurator;
+import org.apache.poi.hpsf.Util;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -24,6 +25,17 @@ public class Framework_001 {
         // http://toolsqa.wpengine.com/selenium-webdriver/log4j-logging/
         DOMConfigurator.configure("log4j.xml");
         //Getting the Test Case name, as it will going to use in so many places
+        //The main use is to get the TestCase row from the Test Data sheet
+        sTestCaseName = this.toString();
+        //From above method we get long test case name including package and class name
+        //The below method will refine your test case name, exactly the name user have used
+        sTestCaseName = Utils.getTestCaseName(this.toString());
+        //Start printing the logs and printing the Test case name
+        Log.startTestCase(sTestCaseName);
+        // Setting up the Test data excel file using Constants variables
+        // For constant variables please see http://toolsqa.wpengine.com/selenium-webdriver/constant-variables/
+        // For setting up Excel for data driven testing, please see http://toolsqa.wpengine.com/selenium-webdriver/data-driven-testing-excel-poi/
+
 
 
     }
