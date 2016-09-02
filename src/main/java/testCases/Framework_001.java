@@ -35,6 +35,11 @@ public class Framework_001 {
         // Setting up the Test data excel file using Constants variables
         // For constant variables please see http://toolsqa.wpengine.com/selenium-webdriver/constant-variables/
         // For setting up Excel for data driven testing, please see http://toolsqa.wpengine.com/selenium-webdriver/data-driven-testing-excel-poi/
+        ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Sheet1");
+        //Fetching the Test Case row number from teh test data sheet
+        //This row number will be feed to so many functions, to get the relevant data from the Test Data sheet
+        iTestCaseRow = ExcelUtils.getRowContains(sTestCaseName, Constant.Col_TestCaseName);
+
 
 
 
