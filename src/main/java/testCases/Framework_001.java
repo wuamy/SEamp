@@ -85,18 +85,40 @@ public class Framework_001 {
             //Now your test is about to finish but before that you need to take descision
             //to pass or fail. If any of your verification is failed, this is to check
             //that is any of your verification during the execution is failed
-            if (BaseClass.bResult==true){
+            if (BaseClass.bResult == true) {
                 //If the value of boolean variable is true, then your test  is
                 //complete pass and do this
-                ExcelUtils.setCellData("Pass", iTestCaseRow, C)
+                ExcelUtils.setCellData("Pass", iTestCaseRow, Constant.Col_Result);
+            } else {
+                // if the value of boolean variable is false, then your test is fail, and
+                // you like to report it accordingly
+                // this is to throw exception in case of fail test, this exception
+                // will be caught by catch block below
+                throw new Exception("Test Case Fail because of Verification");
             }
-
-
-
-
+            //Below are the steps you may like ot perform in case of failed test or any exception faced
+            //before ending your test
+        }catch (Exception e){
+            //if in case you got any exception during the test, it will mark your test
+            //as fail in the test result sheet
+            ExcellUtils.setCellData("Fail", iTestCaseRow, Constant.Col_Result);
+            // if the exception is in between the test, bcoz of any element not found
+            //or anything, this will take screen shot
+            Util.takeScreenshot(driver, sTestCaseName);
+            //This will print the error log message
+            Log.error(e.getMessage());
+            //Again throwing the exception to fail the test completely in TestNG result
+            throw(e);
 
         }
     }
 
+    // its time to close the finish the test case
+    @AfterMethod
+    public void afterMethod(){
+        Log.endTestCase(sTestCaseName);
+        // Closing the opened driver
+        driver.close();
+    }
 
 }
