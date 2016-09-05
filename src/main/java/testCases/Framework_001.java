@@ -59,6 +59,15 @@ public class Framework_001 {
             //This is called Modulization, when we club series of actions into one Module
             //For Modular Drive Framework, please see
             //http://toolsqa.wpengine.com/selenium-webdriver/modular-driven/
+            SignIn_Action.Execute(iTestCaseRow);
+            //This action is to select the Product category from the Top navigation of
+            //the Home Page
+            //I have converted this in to a module, as there are som many logics involved
+            //into this selection
+            //and it is always a best idea to keep your logics separate from your test case
+            ProductSelect_Action.productType(iTestCaseRow);
+
+
         }
     }
 
