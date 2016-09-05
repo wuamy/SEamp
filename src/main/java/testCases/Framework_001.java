@@ -85,7 +85,11 @@ public class Framework_001 {
             //Now your test is about to finish but before that you need to take descision
             //to pass or fail. If any of your verification is failed, this is to check
             //that is any of your verification during the execution is failed
-            if ()
+            if (BaseClass.bResult==true){
+                //If the value of boolean variable is true, then your test  is
+                //complete pass and do this
+                ExcelUtils.setCellData("Pass", iTestCaseRow, C)
+            }
 
 
 
