@@ -48,5 +48,19 @@ public class Framework_001 {
 
     }
 
+    //This is the starting of the main test case
+    @Test
+    public void main() throws Exception{
+        //Every exception throw from any class or method, will be catch here
+        //For exception handling
+        // please see http://toolsqa.wpengine.com/selenium-webdriver/exception-handling-selenium-webdriver/
+        try {
+            //Here we are calling the SignIn Action and passing argument(iTestCaseRow)
+            //This is called Modulization, when we club series of actions into one Module
+            //For Modular Drive Framework, please see
+            //http://toolsqa.wpengine.com/selenium-webdriver/modular-driven/
+        }
+    }
+
 
 }
