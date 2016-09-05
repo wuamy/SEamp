@@ -77,6 +77,16 @@ public class Framework_001 {
             //This action will provide all teh personal detail and on the page
             //and complete the payment for the select product
             PaymentDetails_Action.execute(iTestCaseRow);
+            //This is to assigning product name, price to teh variable from the confirmation
+            //page, so that it can be matched later
+            Confirmation_Action.Execute();
+            //This is to match the product name,
+            Verification_Action.Execute();
+            //Now your test is about to finish but before that you need to take descision
+            //to pass or fail. If any of your verification is failed, this is to check
+            //that is any of your verification during the execution is failed
+            if ()
+
 
 
 
