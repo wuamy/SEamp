@@ -66,6 +66,19 @@ public class Framework_001 {
             //into this selection
             //and it is always a best idea to keep your logics separate from your test case
             ProductSelect_Action.productType(iTestCaseRow);
+            //This action is to select the product from the produt listing page
+            //I have again converted this in to a module, as there are so many logics
+            //involved in to this selection
+            ProductSelect_Action.productNumber(iTestCaseRow);
+            //This is to assigning product name and price to the variable
+            //from the check out page, so that it can be matching the latest verification
+            CheckOut_Action.Execute();
+            //here we are calling the payment details action and passing argument(iTestCaseRow)
+            //This action will provide all teh personal detail and on the page
+            //and complete the payment for the select product
+            PaymentDetails_Action.execute(iTestCaseRow);
+
+
 
 
         }
