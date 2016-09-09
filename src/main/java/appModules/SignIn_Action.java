@@ -39,6 +39,16 @@ public class SignIn_Action {
         Log.info(sPassword + " is entered in Password textbox");
         LogIn_Page.btn_LogIn().click();
         Log.info("Click action is performed on submit button");
+        //I noticed in few runs that selenium is try to perform teh next action before the complete page load
+        //so I have decided to put a wait on the logout link element
+        //now it will wait 10 secs separately before jumping out to next step
+        Utils.waitForElement(Home_Page.lnk_LogOut());
+        //This is another type of logging with the help of Testng reporter log
+        //this has to be very carefully used, you should only print the very important
+        //message into this
+        //this will populate the logs in the testng html reports
+        //I have used this reporter log just once in the whole module
+        Reporter.log("SignIn Action is successfully performed");
 
     }
 }
