@@ -27,5 +27,12 @@ public class SignIn_Action {
         //constant.col_UserName is the column number for UserName column in the test data sheet
         //Please see the constant class in the Utility Package
         //for use of constant variable, please see http://toolsqa.wpengine.com/selenium-webdriver/constant-variables/
+        String sUserName = ExcelUtils.getCellData(iTestCaseRow, Constant.Col_UserName);
+        //Here we are sending the UserName string to the UserName Textbox on the Login page
+        //This is call Page Object Model
+        //for use of POM, please see http://toolsqa.wpengine.com/selenium-webdriver/page-object-model/
+        LogIn_Page.txtbx_UserName().sendKeys(sUserName);
+        //Printing the logs for what we have just performed
+        Log.info(sUserName + "is entered in UserName textbox");
     }
 }
