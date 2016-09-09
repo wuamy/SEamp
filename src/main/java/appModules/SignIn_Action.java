@@ -34,5 +34,11 @@ public class SignIn_Action {
         LogIn_Page.txtbx_UserName().sendKeys(sUserName);
         //Printing the logs for what we have just performed
         Log.info(sUserName + "is entered in UserName textbox");
+        String sPassword = ExcelUtils.getCellData(iTestCaseRow, Constant.Col_Password);
+        LogIn_Page.txtbx_Password().sendKeys(sPassword);
+        Log.info(sPassword + " is entered in Password textbox");
+        LogIn_Page.btn_LogIn().click();
+        Log.info("Click action is performed on submit button");
+
     }
 }
