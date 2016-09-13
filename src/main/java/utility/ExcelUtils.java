@@ -45,6 +45,25 @@ public class ExcelUtils {
         }
     }
 
+    //This method is ot write in the excel cell, row num and col num are the parameters
+    @SuppressWarnings("static-access")
+    public static void setCellData(String Result, int RowNum, int ColNum) throws Exception {
+        try {
+            Row = ExcelWSheet.getRow(RowNum);
+            Cell = Row.getCell(ColNum,Row.RETURN_BLANK_AS_NULL);
+            if (Cell == null) {
+                Cell = Row.createCell(ColNum);
+                Cell.setCellValue(Result);
+            } else {
+                Cell.setCellValue(Result);
+            }
+            // Constant variables test data path and test data file name
+            FileInputStream fileOut = new FileInputStream(Constant.Path_TestData + Constant.File_TestData);
+            EXcelWBook.write(fileOut);
+
+        }
+    }
+
 
 
 
