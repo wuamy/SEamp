@@ -1,6 +1,7 @@
 package utility;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 import org.apache.commons.logging.Log;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -58,10 +59,39 @@ public class ExcelUtils {
                 Cell.setCellValue(Result);
             }
             // Constant variables test data path and test data file name
-            FileInputStream fileOut = new FileInputStream(Constant.Path_TestData + Constant.File_TestData);
+            FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData + Constant.File_TestData);
             EXcelWBook.write(fileOut);
+            fileOut.flush();
+            fileOut.close();
 
+        } catch (Exception e){
+            throw (e);
         }
+    }
+
+    public static int getRowContains(String sTestCasename, int colNum) throws Exception{
+        int i;
+        try {
+            int rowCount = ExcelUtils.getRowUsed();
+            for (i=0; i<rowCount; i++){
+                if (ExcelUtils.getCellData(i,colNum).equalsIgnoreCase(sTestCasename)){
+                    break;
+                }
+            }
+            return i;
+        } catch (Exception e){
+            Log.error("Class ExcelUtil | Method getRowContains | Exception desc : " + e.getMessage());
+            throw (e);
+        }
+
+    }
+
+    public static int getRowUsed() throws Exception {
+        try{
+            int RowCount = ExcelWSheet.getLastRowNum();
+            Log.info("Total number of row used return as " + RowCount + ";");
+        }
+
     }
 
 
