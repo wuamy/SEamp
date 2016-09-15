@@ -90,6 +90,11 @@ public class ExcelUtils {
         try{
             int RowCount = ExcelWSheet.getLastRowNum();
             Log.info("Total number of row used return as " + RowCount + ";");
+            return RowCount;
+        } catch (Exception e){
+            Log.error("Class ExcelUtil | Method getRowUsed | Exception desc : " + e.getMessage());
+            System.out.println(e.getMessage());
+            throw (e);
         }
 
     }
