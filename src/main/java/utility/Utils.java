@@ -3,10 +3,7 @@ package utility;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -45,7 +42,11 @@ public class Utils {
             return value;
         } catch (Exception e){
             Log.error("Class Utils | Method getTestCaseName |Exception desc : "+e.getMessage());
-            throw (e)
+            throw (e);
         }
     }
+    // mouse hover action
+
+    //wait for element
+    public static void waitForElement(WebElement element)
 }
