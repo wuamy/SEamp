@@ -16,4 +16,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * Created by wu on 9/18/2016.
  */
 public class Utils {
+    public static WebDriver driver = null;
+    public static WebDriver OpenBrowser(int iTestCaseRow) throws Exception{
+        String sBrowsername;
+        try {
+            sBrowsername = ExcelUtils.getCellData(iTestCaseRow, Constant.Col_Browser);
+            if (sBrowsername.equalsIgnoreCase("Mozilla")){
+                driver = new FirefoxDriver();
+                Log.info("New driver instantiated");
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            }
+        }
+    }
 }
