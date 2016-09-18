@@ -29,7 +29,7 @@ public class ExcelUtils {
             ExcelWSheet = EXcelWBook.getSheet(SheetName);
             Log.info("Excel sheet opened!");
         } catch (Exception e){
-            throw e;
+            throw (e);
         }
 
     }
@@ -98,10 +98,4 @@ public class ExcelUtils {
         }
 
     }
-
-
-
-
-
-
 }
