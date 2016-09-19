@@ -1,5 +1,8 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
+
+
 /**
  * Created by amy on 9/19/2016.
  */
