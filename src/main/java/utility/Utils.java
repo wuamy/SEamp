@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by wu on 9/18/2016.
  */
-public class Utils {
+public class  Utils {
     public static WebDriver driver = null;
     public static WebDriver OpenBrowser(int iTestCaseRow) throws Exception{
         String sBrowsername;
@@ -48,5 +48,18 @@ public class Utils {
     // mouse hover action
 
     //wait for element
-    public static void waitForElement(WebElement element)
+    public static void waitForElement(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void takeScreenshot(WebDriver driver, String sTestCaseName) throws Exception {
+        try{
+            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File(Constant.Path_ScreenShot + sTestCaseName + ".jpg"));
+        } catch (Exception e){
+            Log.error("Class Utils | Method takeScreenshot | Exception occured while capturing screenshot : " + e.getMessage());
+            throw new Exception();
+        }
+    }
 }
