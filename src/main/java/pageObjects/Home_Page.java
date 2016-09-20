@@ -27,7 +27,7 @@ public class Home_Page extends BaseClass {
         return element;
     }
 
-    public static WebElement lnk_LogOut(WebDriver driver){
+    public static WebElement lnk_LogOut(WebDriver driver) throws Exception{
         try {
             element = driver.findElement(By.cssSelector("#account_logout>a"));
             Log.info("Log out link element is found");
