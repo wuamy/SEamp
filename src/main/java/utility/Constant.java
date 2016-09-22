@@ -41,6 +41,6 @@ public class Constant {
 
     public static final int Col_Result = 13;
 
-    public static final String Path_ScreenShot = "D://ToolsQA//OnlineStore//src//Screenshots//";
+    public static final String Path_ScreenShot = "C://SEamp//src//main//java//Screenshots//";
 
 }
