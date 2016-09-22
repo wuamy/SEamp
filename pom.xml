@@ -16,7 +16,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
                 <configuration>
-                    <suiteXmlFiles>src/testng.xml</suiteXmlFiles>
+                    <suiteXmlFiles>src/test/resources/testng.xml</suiteXmlFiles>
                 </configuration>
             </plugin>
             <plugin>
