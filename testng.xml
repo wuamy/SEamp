@@ -4,7 +4,7 @@
         <listener class-name="utility.CustomReporter"></listener>
     </listeners>
     <test name ="Test One">
-        <parameter name="browser" value="ie" />
+        <!--<parameter name="browser" value="ie" />-->
         <classes>
             <class name="testCases.Framework_001" />
         </classes>
