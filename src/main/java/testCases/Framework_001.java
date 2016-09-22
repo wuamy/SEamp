@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utility.*;
+import pageObjects.*;
+import appModules.*;
 
 /**
  * Created by amy on 9/1/2016.
@@ -40,7 +43,7 @@ public class Framework_001 {
         //This row number will be feed to so many functions, to get the relevant data from the Test Data sheet
         iTestCaseRow = ExcelUtils.getRowContains(sTestCaseName, Constant.Col_TestCaseName);
         //Launching the browser, this will take the browser type from test data sheet
-        driver = Util.OpenBrowser(iTestCaseRow);
+        driver = Utils.OpenBrowser(iTestCaseRow);
         //Initializing the base class for selenium driver
         //now we do need to provide the selenium driver to any of the Page classes or module actions
         //will soon write a post on base class
@@ -65,6 +68,7 @@ public class Framework_001 {
             //I have converted this in to a module, as there are som many logics involved
             //into this selection
             //and it is always a best idea to keep your logics separate from your test case
+            /**
             ProductSelect_Action.productType(iTestCaseRow);
             //This action is to select the product from the produt listing page
             //I have again converted this in to a module, as there are so many logics
@@ -81,7 +85,7 @@ public class Framework_001 {
             //page, so that it can be matched later
             Confirmation_Action.Execute();
             //This is to match the product name,
-            Verification_Action.Execute();
+            Verification_Action.Execute(); */
             //Now your test is about to finish but before that you need to take descision
             //to pass or fail. If any of your verification is failed, this is to check
             //that is any of your verification during the execution is failed
@@ -101,10 +105,10 @@ public class Framework_001 {
         }catch (Exception e){
             //if in case you got any exception during the test, it will mark your test
             //as fail in the test result sheet
-            ExcellUtils.setCellData("Fail", iTestCaseRow, Constant.Col_Result);
+            ExcelUtils.setCellData("Fail", iTestCaseRow, Constant.Col_Result);
             // if the exception is in between the test, bcoz of any element not found
             //or anything, this will take screen shot
-            Util.takeScreenshot(driver, sTestCaseName);
+            Utils.takeScreenshot(driver, sTestCaseName);
             //This will print the error log message
             Log.error(e.getMessage());
             //Again throwing the exception to fail the test completely in TestNG result
