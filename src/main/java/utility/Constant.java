@@ -8,8 +8,8 @@ import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 public class Constant {
     public static final String URL = "http://store.demoqa.com/";
     public static final String Username = "amy";
-    public static final String Password = "";
-    public static final String Path_TestData = "D://ToolsQA//OnlineStore//src//testData//";
+    public static final String Password = "c3qKYLErI*IClnTO";
+    public static final String Path_TestData = "C://SEamp//src//main//java//testData//";
     public static final String File_TestData = "TestData.xlsx";
 
     //test data sheet column
